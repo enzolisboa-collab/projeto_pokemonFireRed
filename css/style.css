@@ -17,6 +17,14 @@
   --spacing-small: 8px;
   --spacing-medium: 16px;
   --spacing-large: 24px;
+  /*pagina do charmander*/
+  --charmander-primary: #ff3700; /* Laranja vibrante */
+  --charmander-secondary: #ec4c3e; /* Amarelo */
+  --charmander-text: #ffffff; /* Branco */
+  --charmander-border: #ffa047; /* Vermelho claro */
+  --font-size-base: 16px;
+  --font-family: "Arial", sans-serif;
+  --spacing-medium: 16px;
 }
 body {
   display: flex;
@@ -136,4 +144,37 @@ ul li:hover {
 .card a {
   text-decoration: none;
   color: inherit;
+}
+/*charmande page*/
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: var(--font-family);
+  background-color: var(--color-hover);
+  height: 500px;
+  background-color: var(--charmander-secondary);
+}
+.charmander-page header {
+  background-color: var(--charmander-primary);
+  color: var(--charmander-text);
+  border: 1px solid var(--charmander-border);
+}
+.charmander-page .titulo {
+  color: var(--charmander-text);
+  font-size: var(--font-size-title);
+  font-family: var(--font-family);
+}
+.charmander-card {
+  background-color: var(--charmander-text);
+  border: 2px solid var(--charmander-border);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+.charmander-img {
+  width: 200px;
+  height: auto;
 }
