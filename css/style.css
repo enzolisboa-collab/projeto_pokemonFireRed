@@ -1,180 +1,315 @@
+      /* --- VARIÁVEIS DE CORES (TEMAS) --- */
 :root {
-  /* Paleta de cores inspirada no Pokémon FireRed */
-  --color-primary: #ff0000; /* Vermelho vibrante (cor principal) */
-  --color-secondary: #ffd700; /* Amarelo dourado (detalhes) */
-  --color-background: #f5f5f5; /* Fundo claro */
-  --color-text: #333333; /* Texto escuro */
-  --color-border: #000000; /* Preto para bordas */
-  --color-hover: #ff4500; /* Vermelho mais escuro para hover */
-
-  /* Fontes */
-  --font-family: "Press Start 2P", "cursive"; /* Fonte retrô estilo Pokémon */
-  --font-size-base: 16px;
-  --font-size-title: 24px;
-  --font-size-subtitle: 20px;
-
-  /* Espaçamento */
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 24px;
-  /*pagina do charmander*/
-  --charmander-primary: #ff3700; /* Laranja vibrante */
-  --charmander-secondary: #ec4c3e; /* Amarelo */
-  --charmander-text: #ffffff; /* Branco */
-  --charmander-border: #ffa047; /* Vermelho claro */
-  --font-size-base: 16px;
-  --font-family: "Arial", sans-serif;
-  --spacing-medium: 16px;
+    /* Tema Padrão (Vermelho) */
+    --cor-principal: #E3350D;
+    --cor-secundaria: #313131;
+    --cor-fundo: #F2F2F2;
+    --cor-fundo-cartao: #FFFFFF;
+    --cor-texto: #000000;
 }
+
+body.tema-charmander {
+    --cor-principal: #F08030;
+    --cor-secundaria: #C03028;
+    --cor-fundo: #FFF3E0;
+}
+
+body.tema-squirtle {
+    --cor-principal: #6890F0;
+    --cor-secundaria: #3858A8;
+    --cor-fundo: #E3F2FD;
+}
+
+body.tema-bulbasaur {
+    --cor-principal: #78C850;
+    --cor-secundaria: #489030;
+    --cor-fundo: #E8F5E9;
+}
+
+/* --- ESTILOS GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  font-family: var(--font-family);
-}
-.cabecalho {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  border: 1px black solid;
-}
-.titulo {
-  font-size: var(--font-size-title);
-  color: var(--color-primary);
-  font-family: var(--font-family);
-  font-size: 24px;
-  font-weight: bold;
-  margin-right: var(--spacing-small);
-}
-.lista {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-ul li:hover {
-  color: var(--color-hover);
-  cursor: pointer;
-}
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  padding: var(--spacing-large);
-  background-color: var(--color-background);
-}
-.descricao {
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  margin: var(--spacing-medium) 0;
-  text-align: center;
-  width: 80%;
-  max-width: 600px;
-  height: 450px;
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.texto {
-  font-size: 23px;
-  font-family: var(--font-family);
-}
-.pokebola {
-  width: 200px;
-  height: auto;
-}
-.rodape {
-  display: flex;
-  align-items: center;
-  background-color: var(--color-primary);
-  padding: var(--spacing-medium);
-}
-.direitos {
-  color: var(--color-background);
-}
-.escolhas {
-  height: 460px;
-  padding: 20px;
-  text-align: center;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s ease;
 }
 
-.escolhas h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: var(--color-primary);
+.texto-escuro {
+    color: #000 !important;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  justify-items: center;
+/* --- CABEÇALHO E ABAS --- */
+.cabecalho-site {
+    background-color: var(--cor-principal);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
-.card {
-  background-color: var(--color-background);
-  border: 2px solid var(--color-primary);
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.grupo-topo-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-.card img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
+.titulo-principal {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.card h3 {
-  font-size: 18px;
-  color: var(--color-primary);
+.grupo-abas {
+    display: flex;
+    gap: 10px;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.botao-aba {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
-.card a {
-  text-decoration: none;
-  color: inherit;
+.botao-aba:hover, .botao-aba.ativo {
+    background-color: white;
+    color: var(--cor-principal);
 }
-/*charmande page*/
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  font-family: var(--font-family);
-  background-color: var(--color-hover);
-  height: 500px;
-  background-color: var(--charmander-secondary);
+
+/* --- BOLINHAS DE TEMA --- */
+.seletor-temas {
+    display: flex;
+    gap: 10px;
 }
-.charmander-page header {
-  background-color: var(--charmander-primary);
-  color: var(--charmander-text);
-  border: 1px solid var(--charmander-border);
+
+.bolinha-tema {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
 }
-.charmander-page .titulo {
-  color: var(--charmander-text);
-  font-size: var(--font-size-title);
-  font-family: var(--font-family);
+.cor-padrao { background-color: #E3350D; }
+.cor-charmander { background-color: #F08030; }
+.cor-squirtle { background-color: #6890F0; }
+.cor-bulbasaur { background-color: #78C850; }
+
+/* --- LAYOUT PRINCIPAL --- */
+.conteudo-principal {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.charmander-card {
-  background-color: var(--charmander-text);
-  border: 2px solid var(--charmander-border);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  width: 300px;
+
+.area-produtos {
+    flex: 3;
 }
-.charmander-img {
-  width: 200px;
-  height: auto;
+
+.area-carrinho {
+    flex: 1;
+    min-width: 300px;
+}
+
+.titulo-secao {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: var(--cor-secundaria);
+}
+
+/* --- GRADE DE PRODUTOS 3x3 --- */
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 itens por linha */
+    gap: 20px;
+}
+
+.cartao-produto {
+    background-color: var(--cor-fundo-cartao);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.cartao-produto:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-principal);
+}
+
+.imagem-produto {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.nome-produto {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.rodape-cartao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-cartao span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+}
+
+.botao-comprar-item {
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botao-comprar-item:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* --- CARRINHO --- */
+.caixa-carrinho {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--cor-secundaria);
+    position: sticky;
+    top: 20px;
+}
+
+.lista-itens-carrinho {
+    min-height: 100px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-item .nome-item { font-weight: bold; color: #000;}
+.info-item div { color: #000; }
+
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.botao-qtd {
+    background-color: #ddd;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+}
+
+.rodape-carrinho {
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+.linha-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.botao-finalizar {
+    width: 100%;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-finalizar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* --- MODAL --- */
+.fundo-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oculto { display: none !important; }
+
+.caixa-modal {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 4px solid var(--cor-principal);
+    max-width: 400px;
+}
+
+.titulo-modal {
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+.botao-fechar-modal {
+    margin-top: 20px;
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 900px) {
+    .conteudo-principal { flex-direction: column; }
+    .grade-produtos { grid-template-columns: repeat(2, 1fr); }
+    .grupo-topo-cabecalho { flex-direction: column; gap: 10px; }
+}
+@media (max-width: 600px) {
+    .grade-produtos { grid-template-columns: 1fr; }
 }
