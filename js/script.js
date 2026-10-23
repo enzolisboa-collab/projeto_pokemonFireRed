@@ -19,12 +19,42 @@ const listaItens = [
 ];
 
 const listaTMs = [
-  { id: 101, nome: "TM01 Mega Punch", preco: 3000, imagem: "" },
-  { id: 102, nome: "TM02 Razor Wind", preco: 2000, imagem: "" },
-  { id: 103, nome: "TM05 Mega Kick", preco: 3000, imagem: "" },
-  { id: 104, nome: "TM07 Horn Drill", preco: 2000, imagem: "" },
-  { id: 105, nome: "TM09 Take Down", preco: 3000, imagem: "" },
-  { id: 106, nome: "TM15 Hyper Beam", preco: 5500, imagem: "" },
+  {
+    id: 101,
+    nome: "TM01 Mega Punch",
+    preco: 3000,
+    imagem: "./img/disco-laranja-grande.png",
+  },
+  {
+    id: 102,
+    nome: "TM02 Razor Wind",
+    preco: 2000,
+    imagem: "./img/disco-verde-grande.png",
+  },
+  {
+    id: 103,
+    nome: "TM05 Mega Kick",
+    preco: 3000,
+    imagem: "./img/disco-laranja-grande.png",
+  },
+  {
+    id: 104,
+    nome: "TM07 Horn Drill",
+    preco: 2000,
+    imagem: "./img/disco-prata-grande.png",
+  },
+  {
+    id: 105,
+    nome: "TM09 Take Down",
+    preco: 3000,
+    imagem: "./img/disco-laranja-grande.png",
+  },
+  {
+    id: 106,
+    nome: "TM15 Hyper Beam",
+    preco: 5500,
+    imagem: "./img/disco-azul-grande.png",
+  },
 ];
 
 const catalogoCompleto = [...listaItens, ...listaTMs];
